@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#FFFBF4">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Building a Happy &amp; Successful Marriage — CMFI America</title>
+<style>
+:root{
+  --ivory:#FFFBF4; --blush:#FDF0F3; --lav:#F5EFFB; --petal:#FBE3EA;
+  --ink:#3D1F55; --ink2:#6E5182; --ink3:#8E79A0;
+  --gold:#C69329; --goldlite:#E8C15E; --goldsoft:#F6E7BE;
+  --rose:#D2607F; --rose2:#B84A6A; --green:#3F9E6E; --red:#C9524C;
+  --card:#FFFFFF;
+  --disp:"Playfair Display",Georgia,"Times New Roman",serif;
+  --script:"Brush Script MT","Segoe Script",cursive;
+  --body:"Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+/* Mobile: kill the tap flash, stop iOS auto-resizing text, allow taps everywhere */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+button,.spot,.chip,.opt{-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  -webkit-appearance:none;appearance:none}
+button{font-family:inherit;min-height:44px}
+body{
+  font-family:var(--body); color:var(--ink); min-height:100vh;
+  font-size:18px; font-weight:600; line-height:1.6;
+  background:
+    radial-gradient(circle at 84% 12%, rgba(251,227,234,.95), transparent 44%),
+    radial-gradient(circle at 8% 82%, rgba(245,239,251,.95), transparent 48%),
+    radial-gradient(circle at 50% 50%, rgba(255,251,244,1), rgba(253,240,243,.7)),
+    linear-gradient(165deg,#FFFBF4 0%,#FDF0F3 45%,#F5EFFB 100%);
+  background-attachment:scroll; overflow-x:hidden; -webkit-overflow-scrolling:touch;
+}
+/* drifting hearts behind everything */
+#hearts{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;overflow:hidden}
+#hearts span{position:absolute;bottom:-40px;color:var(--rose);opacity:.16;
+  animation:rise linear infinite}
+@keyframes rise{
+  0%{transform:translateY(0) rotate(0) scale(.85);opacity:0}
+  12%{opacity:.18}
+  88%{opacity:.14}
+  100%{transform:translateY(-112vh) rotate(28deg) scale(1.05);opacity:0}}
+.wrap{max-width:880px;margin:0 auto;padding:22px 16px 60px;position:relative;z-index:2;
+  padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+
+.panel{
+  background:linear-gradient(160deg,#FFFFFF 0%,#FFFCF7 55%,#FDF4F6 100%);
+  border:2px solid var(--goldlite); border-radius:22px; padding:26px 22px;
+  box-shadow:0 2px 0 rgba(255,255,255,.9) inset, 0 14px 40px rgba(109,63,120,.13),
+             0 3px 12px rgba(200,150,170,.14);
+  position:relative;
+}
+.panel::after{content:"";position:absolute;top:7px;left:7px;right:7px;bottom:7px;border:1px solid rgba(198,147,41,.26);
+  border-radius:16px;pointer-events:none}
+.flourish{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px 0}
+.flourish i{height:1px;width:56px;background:linear-gradient(90deg,transparent,var(--gold))}
+.flourish i+i{background:linear-gradient(90deg,var(--gold),transparent)}
+.flourish b{color:var(--rose);font-size:17px}
+
+h1{font-family:var(--disp);font-size:clamp(34px,8vw,54px);line-height:1.06;font-weight:800;
+   letter-spacing:.3px;text-align:center;color:var(--ink)}
+h1 .sc{font-family:var(--script);display:block;font-size:1.16em;font-weight:400;
+   color:var(--rose2);padding:2px 0 6px;
+   background:linear-gradient(180deg,#D8799A,var(--rose2));
+   -webkit-background-clip:text;background-clip:text;
+   -webkit-text-fill-color:transparent}
+.kicker{text-align:center;letter-spacing:4px;text-transform:uppercase;font-size:14px;
+   color:var(--gold);font-weight:800}
+.sub{text-align:center;color:var(--ink2);font-size:18px;line-height:1.62;margin-top:10px;font-weight:600}
+
+.btn{display:inline-block;border:0;cursor:pointer;font-family:var(--body);font-weight:700;
+  font-size:17px;letter-spacing:1.5px;text-transform:uppercase;padding:17px 34px;border-radius:14px;
+  background:linear-gradient(180deg,#E5859F,var(--rose2));color:#fff;
+  box-shadow:0 5px 0 #93375180, 0 10px 22px rgba(184,74,106,.30); transition:.12s}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #93375180,0 5px 12px rgba(184,74,106,.3)}
+.btn.ghost{background:transparent;color:var(--ink);border:2.5px solid var(--goldlite);
+  box-shadow:none;padding:15px 30px}
+.btn.ghost:hover{background:var(--goldsoft)}
+.btn.sm{padding:13px 24px;font-size:15px}
+
+input[type=text]{width:100%;padding:15px 16px;border-radius:14px;border:2px solid rgba(198,147,41,.4);
+  background:#fff;color:var(--ink);font-size:19px;font-weight:700;font-family:var(--body);outline:none;transition:.15s}
+input[type=text]:focus{border-color:var(--rose);box-shadow:0 0 0 4px rgba(210,96,127,.14)}
+input::placeholder{color:#B9A8C4}
+label{display:block;font-size:13px;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--gold);font-weight:800;margin:0 0 8px 3px}
+.field{margin-bottom:16px}
+
+.screen{display:none;animation:fadeUp .45s ease both}
+.screen.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.hud{display:flex;gap:9px;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap}
+.chip{background:#fff;border:1.5px solid rgba(198,147,41,.45);border-radius:30px;
+  padding:10px 17px;font-size:15px;font-weight:800;letter-spacing:.5px;white-space:nowrap;
+  color:var(--ink);box-shadow:0 2px 8px rgba(109,63,120,.08);transition:.2s}
+.chip b{color:var(--rose2)}
+.chip.bump{animation:bump .45s cubic-bezier(.34,1.6,.5,1)}
+@keyframes bump{0%,100%{transform:scale(1)}40%{transform:scale(1.22)}}
+.chip.hot{border-color:var(--rose);box-shadow:0 0 16px rgba(210,96,127,.42);
+  animation:pulseHot 1s ease-in-out infinite}
+@keyframes pulseHot{50%{box-shadow:0 0 26px rgba(210,96,127,.7)}}
+.sfxbtn{cursor:pointer;user-select:none}
+
+.bar{height:13px;background:#F3E6EC;border-radius:20px;overflow:hidden;
+  border:1px solid rgba(198,147,41,.32);margin-bottom:20px;position:relative}
+.bar i{display:block;height:100%;width:0;border-radius:20px;
+  transition:width .55s cubic-bezier(.3,1.3,.5,1);
+  background:linear-gradient(90deg,var(--goldlite),#E5859F,var(--rose));
+  box-shadow:0 0 12px rgba(210,96,127,.5);position:relative;overflow:hidden}
+.bar i::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
+  animation:sheen 2.2s linear infinite}
+@keyframes sheen{0%{transform:translateX(-100%)}100%{transform:translateX(300%)}}
+
+.lesson{animation:slideIn .5s cubic-bezier(.3,1.2,.5,1) both}
+@keyframes slideIn{from{opacity:0;transform:translateX(34px)}to{opacity:1;transform:none}}
+.lnum{display:inline-block;font-size:13px;letter-spacing:2.6px;text-transform:uppercase;
+  color:#fff;background:linear-gradient(180deg,#E5859F,var(--rose2));
+  padding:6px 14px;border-radius:20px;font-weight:800;margin-bottom:14px}
+.lh{font-family:var(--disp);font-size:clamp(27px,6vw,38px);line-height:1.24;margin-bottom:8px;color:var(--ink);font-weight:800}
+.lh em{font-style:normal;color:var(--rose2)}
+.lbody{font-size:19px;line-height:1.72;color:var(--ink2);margin-top:14px;font-weight:600}
+.lbody strong{color:var(--ink);font-weight:800}
+.lbody em{color:var(--rose2);font-style:italic}
+.scr{background:linear-gradient(120deg,#FFF9EC,#FDF2F5);border-left:4px solid var(--goldlite);
+  border-radius:0 14px 14px 0;padding:15px 18px;margin:15px 0;
+  box-shadow:0 3px 12px rgba(109,63,120,.07);animation:fadeUp .5s ease both}
+.scr .ref{font-size:13.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  font-weight:800;margin-bottom:7px}
+.scr .txt{font-family:var(--disp);font-size:20px;line-height:1.56;font-style:italic;color:var(--ink);font-weight:700}
+.pill{display:inline-block;background:#FFF6E2;border:1px solid rgba(198,147,41,.5);
+  border-radius:20px;padding:8px 15px;margin:5px 6px 0 0;font-size:15.5px;font-weight:700;color:var(--ink)}
+.dotrow{display:flex;gap:7px;justify-content:center;margin-top:20px}
+.dotrow i{width:8px;height:8px;border-radius:50%;background:#E9D9E4;transition:.25s}
+.dotrow i.on{background:var(--rose);transform:scale(1.4);box-shadow:0 0 10px rgba(210,96,127,.6)}
+
+.round-tag{display:inline-block;font-size:13px;letter-spacing:2.4px;text-transform:uppercase;
+  color:#fff;background:linear-gradient(180deg,#E5859F,var(--rose2));
+  padding:6px 14px;border-radius:20px;font-weight:800;margin-bottom:14px}
+.q{font-family:var(--disp);font-size:clamp(25px,5.6vw,34px);line-height:1.34;margin-bottom:24px;color:var(--ink);font-weight:800}
+.opts{display:grid;gap:11px}
+.opt{text-align:left;cursor:pointer;border:2px solid rgba(198,147,41,.36);border-radius:16px;
+  background:#fff;color:var(--ink);padding:17px 19px;font-size:19px;font-weight:700;
+  font-family:var(--body);line-height:1.42;display:flex;gap:13px;align-items:flex-start;
+  transition:.14s;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(109,63,120,.06);
+  animation:optIn .38s cubic-bezier(.3,1.2,.5,1) both}
+@keyframes optIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.opt:hover:not(:disabled){background:#FFF7FA;border-color:var(--rose);transform:translateX(5px);
+  box-shadow:0 5px 16px rgba(210,96,127,.16)}
+.opt:disabled{cursor:default}
+.opt .ltr{flex:0 0 auto;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+  background:#FFF3D9;border:1.5px solid rgba(198,147,41,.55);
+  font-weight:800;font-size:16px;color:var(--gold);transition:.25s}
+.opt.right{background:linear-gradient(120deg,#E6F7EE,#F2FBF6);border-color:var(--green);
+  animation:popIn .45s cubic-bezier(.34,1.5,.5,1);box-shadow:0 0 22px rgba(63,158,110,.28)}
+.opt.right .ltr{background:var(--green);color:#fff;border-color:var(--green);
+  transform:rotate(360deg) scale(1.12)}
+.opt.right::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.85),transparent 80%);
+  animation:swipe .75s ease-out}
+@keyframes swipe{from{transform:translateX(-110%)}to{transform:translateX(110%)}}
+.opt.wrong{background:linear-gradient(120deg,#FCEDEC,#FDF5F4);border-color:var(--red)}
+.opt.wrong{animation:shake .42s}
+.opt.wrong .ltr{background:var(--red);color:#fff;border-color:var(--red)}
+.opt.fade{opacity:.42}
+@keyframes popIn{0%{transform:scale(.95)}55%{transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}22%{transform:translateX(-9px)}
+  44%{transform:translateX(8px)}68%{transform:translateX(-5px)}86%{transform:translateX(3px)}}
+
+.fb{margin-top:20px;border-radius:16px;padding:17px 19px;display:none;
+  border-left:5px solid var(--goldlite);background:linear-gradient(120deg,#FFF9EC,#FDF2F5)}
+.fb.on{display:block;animation:fadeUp .35s ease both}
+.fb .verdict{font-family:var(--disp);font-size:24px;font-weight:800;margin-bottom:9px}
+.fb .verdict.y{color:var(--green)} .fb .verdict.n{color:var(--red)}
+.fb .verse{font-size:13.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);
+  font-weight:800;margin-bottom:7px}
+.fb .teach{font-size:18.5px;line-height:1.66;color:var(--ink2);font-weight:600}
+.pts{float:right;font-family:var(--disp);font-size:26px;color:var(--rose2);font-weight:800}
+
+.float{position:fixed;left:50%;top:36%;transform:translateX(-50%);font-family:var(--disp);
+  font-size:64px;font-weight:800;color:var(--rose2);text-shadow:0 4px 18px rgba(210,96,127,.45);
+  pointer-events:none;z-index:60;animation:floatUp 1.15s ease-out forwards}
+@keyframes floatUp{0%{opacity:0;transform:translateX(-50%) scale(.5)}
+  22%{opacity:1;transform:translateX(-50%) scale(1.2)}
+  40%{transform:translateX(-50%) scale(1)}
+  100%{opacity:0;transform:translateX(-50%) translateY(-95px) scale(.95)}}
+.stamp{position:fixed;left:50%;top:44%;transform:translate(-50%,-50%);font-size:118px;
+  pointer-events:none;z-index:59;animation:stampIn .85s ease-out forwards}
+@keyframes stampIn{0%{opacity:0;transform:translate(-50%,-50%) scale(2.4) rotate(-18deg)}
+  30%{opacity:1;transform:translate(-50%,-50%) scale(.92) rotate(4deg)}
+  46%{transform:translate(-50%,-50%) scale(1.04) rotate(0)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(1.1)}}
+
+#fx{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:55;overflow:hidden}
+.bit{position:absolute;font-size:22px;animation:drop linear forwards;
+  filter:drop-shadow(0 2px 4px rgba(109,63,120,.2))}
+@keyframes drop{to{transform:translateY(108vh) rotate(680deg);opacity:0}}
+.ring{position:fixed;left:50%;top:44%;width:40px;height:40px;margin:-20px 0 0 -20px;
+  border:3px solid var(--green);border-radius:50%;pointer-events:none;z-index:54;
+  animation:ripple .8s ease-out forwards}
+@keyframes ripple{to{transform:scale(11);opacity:0}}
+
+.shelf{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 6px}
+.spot{cursor:pointer;border:2.5px dashed rgba(198,147,41,.55);border-radius:18px;padding:22px 12px;
+  text-align:center;background:#fff;transition:.16s;color:var(--ink);
+  font-family:var(--body);font-size:17px;font-weight:700;box-shadow:0 3px 10px rgba(109,63,120,.07)}
+.spot:hover{border-color:var(--rose);background:#FFF7FA;transform:translateY(-4px);
+  box-shadow:0 10px 22px rgba(210,96,127,.18)}
+.spot .ico{font-size:48px;display:block;margin-bottom:10px}
+.spot.pick{border-style:solid;border-color:var(--rose);background:#FDEFF3}
+.pray{text-align:center;font-family:var(--disp);font-size:23px;line-height:1.52;
+  color:var(--rose2);padding:18px 10px;font-style:italic;font-weight:800}
+.dots{display:flex;gap:7px;justify-content:center;margin-top:12px}
+.dots i{width:9px;height:9px;border-radius:50%;background:#EBD9E2;
+  animation:blink 1.3s ease-in-out infinite}
+.dots i:nth-child(2){animation-delay:.22s} .dots i:nth-child(3){animation-delay:.44s}
+@keyframes blink{50%{background:var(--rose);transform:scale(1.35)}}
+
+.medal{font-size:92px;text-align:center;line-height:1;animation:medalIn .8s cubic-bezier(.34,1.5,.5,1) both}
+@keyframes medalIn{0%{opacity:0;transform:scale(.2) rotate(-25deg)}100%{opacity:1;transform:none}}
+.big{font-family:var(--disp);font-size:clamp(46px,13vw,80px);text-align:center;line-height:1;
+  color:var(--rose2);font-weight:800;
+  background:linear-gradient(180deg,#E5859F,var(--rose2));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent}
+.rank{font-family:var(--disp);font-size:31px;font-weight:800;text-align:center;color:var(--gold);margin:8px 0 5px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.stat{background:#fff;border:1.5px solid rgba(198,147,41,.4);border-radius:15px;
+  padding:13px 8px;text-align:center;box-shadow:0 3px 10px rgba(109,63,120,.07)}
+.stat b{display:block;font-family:var(--disp);font-size:31px;font-weight:800;color:var(--rose2)}
+.stat span{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);font-weight:700}
+.board{margin-top:20px}
+.row{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:13px;
+  background:#fff;margin-bottom:7px;border:1px solid rgba(198,147,41,.3);
+  box-shadow:0 2px 7px rgba(109,63,120,.06)}
+.row.me{border-color:var(--rose);background:#FDEFF3}
+.row .pos{font-family:var(--disp);font-size:22px;color:var(--gold);width:34px;font-weight:800}
+.row .nm{flex:1;font-size:17px;font-weight:700;color:var(--ink)} .row .sc2{font-weight:800;color:var(--rose2);font-size:18px}
+.review{margin-top:22px}
+.rv{padding:13px 0;border-bottom:1px solid rgba(198,147,41,.24)}
+.rv .rq{font-family:var(--disp);font-size:20px;font-weight:800;line-height:1.4;margin-bottom:6px;color:var(--ink)}
+.rv .ra{font-size:16.5px;color:var(--green);font-weight:800}
+.rv .rt{font-size:16px;color:var(--ink2);line-height:1.56;margin-top:4px;font-weight:600}
+.section-title{font-size:13.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold);
+  font-weight:800;border-bottom:1px solid rgba(198,147,41,.35);padding-bottom:8px;margin-bottom:12px}
+.center{text-align:center} .mt{margin-top:20px}
+.btnrow{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.foot{text-align:center;font-size:15px;font-weight:600;color:var(--ink3);margin-top:26px;line-height:1.7}
+.foot .sc{font-family:var(--script);font-size:23px;color:var(--rose2)}
+@media (max-width:520px){.shelf{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}
+  #hearts{display:none}}
+</style>
+
+<div id="compatError" role="alert" style="display:none;position:fixed;inset:0;z-index:9999;
+padding:24px;background:#FFFBF4;color:#3D1F55;font-family:system-ui,-apple-system,sans-serif;
+align-items:center;justify-content:center;text-align:center">
+<div style="max-width:520px;background:#fff;border:2px solid #E8C15E;border-radius:20px;padding:26px;
+box-shadow:0 12px 35px rgba(61,31,85,.15)">
+<div style="font-size:42px;margin-bottom:10px">💛</div>
+<h2 style="margin-bottom:10px">This phone/browser cannot run the quiz</h2>
+<p style="line-height:1.55">Please open this file with Safari on iPhone or Chrome on Android.
+If you opened it from WhatsApp, Files, or another preview screen, choose <strong>Open in browser</strong>.</p>
+</div></div><div id="hearts"></div>
+<div id="fx"></div>
+<div class="wrap">
+
+<!-- ══ REGISTER ══ -->
+<section id="reg" class="screen on">
+  <div class="panel">
+    <div class="kicker">CMFI America Presents</div>
+    <div class="flourish"><i></i><b>♥</b><i></i></div>
+    <h1>Building a Happy &amp; Successful<span class="sc">Marriage</span></h1>
+    <div class="flourish"><i></i><b>♥ ♥</b><i></i></div>
+    <p class="sub">The Couple's Conference Challenge. Two questions govern every decision in a
+      marriage — <em>is it right before God?</em> and <em>is it best for our home?</em>
+      Communication is how a couple finds the answers.</p>
+    <div class="mt">
+      <div class="field"><label>Your name</label>
+        <input type="text" id="n1" placeholder="e.g. Daniel" maxlength="24" autocomplete="off"></div>
+      <div class="field"><label>Your spouse's name <span style="opacity:.6">(optional)</span></label>
+        <input type="text" id="n2" placeholder="e.g. Grace" maxlength="24" autocomplete="off"></div>
+      <div class="center"><button class="btn" id="start">Begin</button></div>
+    </div>
+    <p class="foot">Play as a couple on one screen. Talk before you tap —<br>the disagreements are the point.</p>
+  </div>
+</section>
+
+<!-- ══ TEACHING ══ -->
+<section id="lesson" class="screen">
+  <div class="hud">
+    <div class="chip" id="lTag">Teaching</div>
+    <div class="chip sfxbtn" id="lSfx">🔊 Sound</div>
+    <div class="chip sfxbtn" id="lSize">A+ Text</div>
+  </div>
+  <div class="panel">
+    <div id="lCard"></div>
+    <div class="dotrow" id="lDots"></div>
+    <div class="btnrow">
+      <button class="btn ghost sm" id="lBack">Back</button>
+      <button class="btn" id="lNext">Continue</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROUND CARD ══ -->
+<section id="intro" class="screen">
+  <div class="panel center">
+    <div class="medal" id="iIcon">♥</div>
+    <div class="kicker mt" id="iNum">Round 1</div>
+    <h1 style="font-size:clamp(29px,7vw,43px);margin-top:8px" id="iName"></h1>
+    <div class="flourish"><i></i><b>♥</b><i></i></div>
+    <p class="sub" id="iDesc"></p>
+    <button class="btn mt" id="iGo">Start this round</button>
+  </div>
+</section>
+
+<!-- ══ QUIZ ══ -->
+<section id="quiz" class="screen">
+  <div class="hud">
+    <div class="chip">Q <b id="hQ">1</b>/<span id="hTot">50</span></div>
+    <div class="chip" id="hStreak">Streak <b>0</b></div>
+    <div class="chip" id="hPtsChip">Points <b id="hPts">0</b></div>
+    <div class="chip sfxbtn" id="qSfx">🔊</div>
+    <div class="chip sfxbtn" id="qSize">A+</div>
+  </div>
+  <div class="bar"><i id="hBar"></i></div>
+  <div class="ranktrack">
+    <div class="rl"><span id="rkNow">Willing Heart</span><span>Next: <b id="rkNext">Growing Together</b></span></div>
+    <div class="rankbar"><i id="rkBar"></i></div>
+  </div>
+  <div class="panel">
+    <div class="round-tag" id="qRound"></div>
+    <div class="qtop">
+      <div class="timer" id="tRing">
+        <svg width="58" height="58" viewBox="0 0 58 58">
+          <circle cx="29" cy="29" r="25" fill="none" stroke="rgba(232,193,94,.2)" stroke-width="5"/>
+          <circle id="tArc" cx="29" cy="29" r="25" fill="none" stroke="#E8C15E" stroke-width="5"
+            stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="0"/>
+        </svg>
+        <div class="tnum" id="tNum">20</div>
+      </div>
+      <div class="combo">
+        <div class="lab"><span id="cLab">Answer fast for bonus points</span>
+          <b class="mult" id="cMult">×1</b></div>
+        <div class="cbar" id="cBar"><i></i></div>
+      </div>
+    </div>
+    <h2 class="q" id="qText"></h2>
+    <div class="opts" id="qOpts"></div>
+    <div class="lifelines" id="lls">
+      <button class="ll" id="ll5050">🤝 Counsel · narrow to two</button>
+      <button class="ll" id="llSkip">🕊️ Grace · pass this one</button>
+    </div>
+    <div class="fb" id="fb">
+      <div class="verdict" id="fbV"></div>
+      <div class="verse" id="fbRef"></div>
+      <p class="teach" id="fbT"></p>
+      <div class="center" style="margin-top:16px"><button class="btn sm" id="qNext">Next</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOTTLE ══ -->
+<section id="bottle" class="screen">
+  <div class="hud"><div class="chip">The Assignment</div><div class="chip">Points <b id="bPts">0</b></div></div>
+  <div class="panel">
+    <div class="round-tag">Interlude · The two factors, applied</div>
+    <h2 class="q" id="bText"></h2>
+    <div id="bBody"></div>
+  </div>
+</section>
+
+<!-- ══ RESULT ══ -->
+<section id="done" class="screen">
+  <div class="panel">
+    <div class="medal" id="rIcon">🏆</div>
+    <div class="big" id="rPts">0</div>
+    <div class="kicker">Points</div>
+    <div class="rank" id="rRank"></div>
+    <p class="sub" id="rMsg"></p>
+    <div class="record" id="rRecord" style="display:none">🎉 New personal best!</div>
+    <p class="pbline" id="rPB"></p>
+    <div class="stats">
+      <div class="stat"><b id="sCorrect">0</b><span>Correct</span></div>
+      <div class="stat"><b id="sAcc">0%</b><span>Accuracy</span></div>
+      <div class="stat"><b id="sBest">0</b><span>Best streak</span></div>
+    </div>
+    <div class="section-title" style="margin-top:6px">Badges earned</div>
+    <div class="badgegrid" id="rBadges"></div>
+    <div class="panel" style="background:linear-gradient(140deg,#FFF9EC,#FDF2F5);padding:18px;margin-top:18px">
+      <div class="section-title">The two factors — ask these before every decision</div>
+      <div style="text-align:left">
+        <span class="pill">1 · Is it right before God?</span>
+        <span class="pill">2 · Is it best for our home?</span>
+      </div>
+      <div class="section-title" style="margin-top:18px">And how we find the answers</div>
+      <div style="text-align:left">
+        <span class="pill">Communication — the instrument</span>
+        <span class="pill">Dying to self</span>
+        <span class="pill">Patience</span>
+      </div>
+      <div class="scr" style="margin-top:16px">
+        <div class="ref">Galatians 2:20</div>
+        <div class="txt">“I have been crucified with Christ; it is no longer I who live,
+          but Christ lives in me.”</div>
+      </div>
+      <p class="pray" style="font-size:21px;padding:4px">“Oh Lord, bless us with the ability to
+        communicate — with wisdom, and with exceptional ability.”</p>
+    </div>
+    <div class="btnrow">
+      <button class="btn" id="again">Play Again</button>
+      <button class="btn ghost" id="showRev">See the Answers</button>
+    </div>
+    <div class="board" id="board"></div>
+    <div class="review" id="review" style="display:none"></div>
+    <p class="foot"><span class="sc">Building Godly Marriages. Impacting Generations.</span><br>
+      CMFI America · Couple's Conference</p>
+  </div>
+</section>
+</div>
+
+<script>
+/* ═══════════ STORAGE SHIM ═══════════ */
+/* Works whether this runs inside the artifact viewer, from a phone's Files app,
+   or from a web server. Never throws, so a blocked cookie jar cannot stop play. */
+(function(){
+  if(window.storage && typeof window.storage.get==='function') return;
+  var mem={};
+  function key(k){ return 'fq_'+k; }
+  window.storage={
+    get:function(k){ try{ var v=localStorage.getItem(key(k));
+        if(v===null && !(k in mem)) return null;
+        return {key:k,value:v===null?mem[k]:v}; }
+      catch(e){ return (k in mem)?{key:k,value:mem[k]}:null; } },
+    set:function(k,v){ mem[k]=v; try{ localStorage.setItem(key(k),v); }catch(e){}
+        return {key:k,value:v}; },
+    delete:function(k){ delete mem[k]; try{ localStorage.removeItem(key(k)); }catch(e){}
+        return {key:k,deleted:true}; },
+    list:function(){ return {keys:Object.keys(mem)}; }
+  };
+})();
+
+/* ═══════════ SOUND ═══════════ */
+let AC=null, sfxOn=true;
+function ac(){
+  if(!AC){
+    try{
+      var AudioCtor=window.AudioContext||window.webkitAudioContext;
+      if(AudioCtor) AC=new AudioCtor();
+    }catch(e){AC=null;}
+  }
+  if(AC&&AC.state==='suspended'){
+    try{var p=AC.resume();if(p&&p.catch)p.catch(function(){});}catch(e){}
+  }
+  return AC;
+}
+const N={C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392,A4:440,B4:493.88,
+  C5:523.25,D5:587.33,E5:659.25,F5:698.46,G5:783.99,A5:880,B5:987.77,C6:1046.5,
+  E6:1318.5,G6:1568,F3:174.61,A3:220,D3:146.83};
+function tone(f,at,dur,vol=.15,type='triangle'){
+  const c=ac(); if(!c||!sfxOn) return;
+  const t=c.currentTime+at, o=c.createOscillator(), g=c.createGain();
+  o.type=type; o.frequency.value=f;
+  g.gain.setValueAtTime(0,t);
+  g.gain.linearRampToValueAtTime(vol,t+.014);
+  g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+dur+.05);
+}
+const play={
+  /* bright, happy rising arpeggio with a sparkle on top */
+  right(){ [['C5',0],['E5',.055],['G5',.11],['C6',.165]].forEach(([n,d])=>tone(N[n],d,.55,.16));
+           tone(N.E6,.24,.5,.09,'sine'); tone(N.G6,.30,.55,.07,'sine'); },
+  /* gentle, non-punishing */
+  wrong(){ tone(N.A3,0,.3,.10,'sine'); tone(N.F3,.14,.42,.09,'sine'); },
+  streak(){ ['C5','E5','G5','C6','E6','G6'].forEach((n,i)=>tone(N[n],i*.07,.6,.14));
+            tone(N.C6,.45,.9,.10,'sine'); },
+  tap(){ tone(N.A4,0,.07,.06,'sine'); },
+  badge(){ ['G5','C6','E6','G6'].forEach((n,i)=>tone(N[n],i*.075,.7,.13));
+           tone(N.C6,.3,.9,.08,'sine'); },
+  chapter(){ ['C5','G5','C6','E6','G6','C6'].forEach((n,i)=>tone(N[n],i*.1,.85,.15));
+             tone(N.E6,.62,1.2,.08,'sine'); },
+  rankup(){ ['E5','G5','B5','E6'].forEach((n,i)=>tone(N[n],i*.09,.85,.14));
+            tone(N.B5,.4,1,.09,'sine'); },
+  lifeline(){ tone(N.D5,0,.2,.09,'sine'); tone(N.A5,.09,.3,.07,'sine'); },
+  urgent(){ tone(N.B4,0,.11,.055,'sine'); },
+  page(){ tone(N.E5,0,.14,.07,'sine'); tone(N.G5,.05,.2,.05,'sine'); },
+  open(){ [['G4',0],['C5',.08],['E5',.16]].forEach(([n,d])=>tone(N[n],d,.6,.11)); },
+  bottle(){ ['C5','D5','E5','G5','C6'].forEach((n,i)=>tone(N[n],i*.11,.8,.15));
+            tone(N.G5,.55,1.1,.09,'sine'); },
+  /* full fanfare for the finish */
+  fanfare(){ const seq=[['C5',0,.35],['E5',.18,.35],['G5',.36,.35],['C6',.54,.7],
+    ['G5',.95,.3],['C6',1.13,1.1],['E6',1.13,1.1]];
+    seq.forEach(([n,d,l])=>tone(N[n],d,l,.15));
+    tone(N.G6,1.3,1.2,.07,'sine'); }
+};
+function toggleSfx(){ sfxOn=!sfxOn; ac(); if(sfxOn) play.tap(); paintSfx(); }
+function paintSfx(){ const t=sfxOn?'🔊 Sound':'🔇 Muted';
+  document.querySelectorAll('.sfxbtn').forEach(b=>b.textContent=b.id==='qSfx'?(sfxOn?'🔊':'🔇'):t); }
+function unlockAudio(){
+  var c=ac(); if(!c) return;
+  try{ var b=c.createBuffer(1,1,22050), s=c.createBufferSource();
+       s.buffer=b; s.connect(c.destination); s.start(0); }catch(e){}
+}
+document.addEventListener('touchstart',unlockAudio,{once:true,passive:true});
+document.addEventListener('pointerdown',unlockAudio,{once:true});
+document.addEventListener('click',unlockAudio,{once:true});
+
+/* ═══════════ TEACHING CONTENT ═══════════ */
+const S = (ref,txt) => `<div class="scr"><div class="ref">${ref}</div><div class="txt">“${txt}”</div></div>`;
+
+const LESSONS = {
+two: { tag:'Teaching · The Two Factors', cards:[
+ { h:'Before we play, remember<br><em>what we were taught</em>',
+   body:`<p class="lbody">The seminar gave us <strong>two factors</strong> for a successful marriage.
+   They are not two rules. They are <strong>two questions</strong> — and a couple who learns to ask
+   them will settle disagreements that would otherwise last for years.</p>
+   <div style="margin:16px 0">
+     <span class="pill">1 · Is it right before God?</span>
+     <span class="pill">2 · Is it best for our home?</span>
+   </div>
+   <p class="lbody">Every opinion, every action, every decision goes through these two.</p>` },
+
+ { h:'Factor One —<br><em>Is it right before God?</em>',
+   body:`<p class="lbody">Before you ask whether you like it, whether it is convenient, or whether
+   it is what your family always did, ask this: <strong>are our actions and decisions right
+   before God?</strong></p>
+   ${S('Romans 12:2','Do not be conformed to this world, but be transformed by the renewing of your mind, that you may prove what is that good and acceptable and perfect will of God.')}
+   ${S('Colossians 3:17','And whatever you do in word or deed, do all in the name of the Lord Jesus, giving thanks to God the Father through Him.')}
+   <p class="lbody">Many disagreements simply end here. Once a couple honestly asks what is right
+   before God, one of the two opinions often quietly withdraws.</p>` },
+
+ { h:'Factor Two —<br><em>Is it best for our home?</em>',
+   body:`<p class="lbody">The second question is <strong>not</strong> “is it best for me?” and it is
+   <strong>not</strong> “is it best for you?” Those are the two questions that start every fight.</p>
+   <p class="lbody">The real question is: <strong>which opinion, action, or decision is best for
+   our home?</strong> There is a third party in the room, and it is the household you are building
+   together.</p>
+   ${S('Psalm 127:1','Unless the LORD builds the house, they labor in vain who build it.')}
+   ${S('Joshua 24:15','As for me and my house, we will serve the LORD.')}` },
+
+ { h:'It is not <em>me or you</em>.<br>It is <em>us</em>.',
+   body:`<p class="lbody">This is the shift that changes a marriage. As long as a disagreement is
+   “my opinion versus your opinion,” somebody must lose. The moment it becomes “what is best for
+   our home,” <strong>you are both on the same side of the table</strong>, looking at the problem
+   together instead of at each other.</p>
+   ${S('Amos 3:3','Can two walk together, unless they are agreed?')}
+   ${S('1 Corinthians 10:24','Let no one seek his own, but each one the other\'s well-being.')}
+   <p class="lbody">Winning an argument against your spouse is still a loss for your home.</p>` },
+
+ { h:'What these two factors<br><em>ask of us</em>',
+   body:`<p class="lbody">Because these are the measures, two things follow naturally:</p>
+   <p class="lbody"><strong>Be willing to change.</strong> If an opinion is not right before God, or
+   not best for the home, it must go — even if it is yours, and even if you have held it for
+   twenty years.</p>
+   ${S('Philippians 2:3–4','Let nothing be done through selfish ambition or conceit, but in lowliness of mind let each esteem others better than himself.')}
+   <p class="lbody"><strong>Never decide alone.</strong> You cannot answer “is it best for our home”
+   by yourself. The question has the word <em>our</em> in it.</p>
+   ${S('Proverbs 15:22','Without counsel, plans go awry, but in the multitude of counselors they are established.')}` },
+
+ { h:'But how do we <em>find</em><br>the answers?',
+   body:`<p class="lbody">Here is the honest difficulty. Both questions are simple to say and hard
+   to answer. Two people can pray about the same matter and come away with different impressions.
+   Two people can both want what is best for the home and still disagree about what that is.</p>
+   <p class="lbody">So God gave couples an instrument for finding out. It is not a technique or a
+   personality trait. It is <strong>communication</strong> — and it is what the rest of this evening
+   is about.</p>
+   <p class="pray" style="margin-top:14px">“Oh Lord, bless us with<br>the ability to communicate.”</p>` }
+]},
+
+die: { tag:'Teaching · The Two Great Solutions', cards:[
+ { h:'The great solution to<br><em>poor communication</em>',
+   body:`<p class="lbody">We named the walls. Now the door. There are two solutions above every
+   other, and neither is a technique. The first is a death. The second is a waiting.</p>
+   <p class="lbody"><strong>Dying to self.</strong> Almost every barrier we listed — pride,
+   a strong will, refusal to change, the silent treatment, the need to win — is the <em>same root</em>
+   wearing a different face. That root is self. Deal with the root and the branches fall together.</p>
+   ${S('Galatians 2:20','I have been crucified with Christ; it is no longer I who live, but Christ lives in me.')}` },
+
+ { h:'What the Lord<br><em>Himself said</em>',
+   body:`${S('Luke 9:23','If anyone desires to come after Me, let him deny himself, and take up his cross daily, and follow Me.')}
+   ${S('John 12:24','Unless a grain of wheat falls into the ground and dies, it remains alone; but if it dies, it produces much grain.')}
+   <p class="lbody">Note the word <strong>daily</strong>. This is not one decision made at an altar
+   years ago. It is a decision made again on Tuesday evening when you are tired and certain you are right.</p>
+   ${S('1 Corinthians 15:31','I die daily.')}` },
+
+ { h:'What it looks like<br><em>in a marriage</em>',
+   body:`<p class="lbody">Dying to self is not dramatic. In a home it looks small and unglamorous:</p>
+   <div style="margin:12px 0">
+     <span class="pill">Letting go of the last word</span>
+     <span class="pill">Apologising first</span>
+     <span class="pill">Putting down the phone</span>
+     <span class="pill">Hearing it fully before replying</span>
+     <span class="pill">Changing a habit you like</span>
+     <span class="pill">Losing an argument you could win</span>
+   </div>
+   ${S('Philippians 2:5–8','Let this mind be in you which was also in Christ Jesus, who... made Himself of no reputation, taking the form of a bondservant... He humbled Himself and became obedient to the point of death.')}
+   <p class="lbody">Christ is our pattern. He did not defend His rights — and He had more of them than you do.</p>` },
+
+ { h:'Weakness is<br><em>not an entitlement</em>',
+   body:`<p class="lbody">“That is just how I am.” “My family were all like this.” “You know my temper.”
+   These are <strong>descriptions, not defences</strong>. Your spouse still lives with the consequences,
+   and God has already made provision for the change.</p>
+   ${S('2 Corinthians 12:9','My grace is sufficient for you, for My strength is made perfect in weakness.')}
+   ${S('James 4:6','God resists the proud, but gives grace to the humble.')}
+   <p class="lbody">Grace is offered to the humble — which means it is available the moment you stop
+   defending yourself, and not one minute before.</p>` },
+
+ { h:'The second great solution —<br><em>patience</em>',
+   body:`<p class="lbody">Dying to self is the decision. <strong>Patience is that same decision
+   held over time.</strong> Anyone can yield once in a seminar. Patience is yielding again in
+   November when nothing has changed yet.</p>
+   ${S('1 Corinthians 13:4','Love suffers long and is kind; love does not envy; love does not parade itself, is not puffed up.')}
+   <p class="lbody">Notice what Scripture puts <em>first</em> in its description of love. Not passion.
+   Not romance. <strong>Suffering long.</strong></p>
+   ${S('Ecclesiastes 7:8','The end of a thing is better than its beginning; the patient in spirit is better than the proud in spirit.')}` },
+
+ { h:'Patience <em>in the moment</em><br>— the pause before you reply',
+   body:`<p class="lbody">Most damage in a marriage is done in the four seconds between hearing
+   something and answering it. Patience is what you put into that gap.</p>
+   ${S('Proverbs 14:29','He who is slow to wrath has great understanding, but he who is impulsive exalts folly.')}
+   ${S('Proverbs 15:18','A wrathful man stirs up strife, but he who is slow to anger allays contention.')}
+   ${S('James 1:19','Let every man be swift to hear, slow to speak, slow to wrath.')}
+   <p class="lbody">Slow to speak is not weakness. Scripture calls it <strong>great understanding</strong>.</p>` },
+
+ { h:'Patience <em>over the years</em><br>— while your spouse changes',
+   body:`<p class="lbody">You are asking God for time to grow. Give your spouse the same time you
+   are asking for yourself. Change in a marriage is real, but it is rarely fast.</p>
+   ${S('Ephesians 4:2','With all lowliness and gentleness, with longsuffering, bearing with one another in love.')}
+   ${S('Colossians 3:12–13','Put on tender mercies, kindness, humility, meekness, longsuffering; bearing with one another, and forgiving one another.')}
+   ${S('Proverbs 19:11','The discretion of a man makes him slow to anger, and his glory is to overlook a transgression.')}
+   <p class="lbody">And remember where patience comes from — it is not a personality type.
+   It is <strong>fruit</strong>, grown by the Spirit in people who ask for it.</p>
+   ${S('Galatians 5:22–23','The fruit of the Spirit is love, joy, peace, longsuffering, kindness, goodness, faithfulness, gentleness, self-control.')}` },
+
+ { h:'Then <em>repent</em>,<br>and make real effort',
+   body:`<p class="lbody">Repentance is not an apology with better vocabulary. It <strong>changes the
+   behaviour</strong>. A spouse can tell the difference within a week, and no amount of eloquence
+   closes the gap.</p>
+   ${S('Acts 3:19','Repent therefore and be converted, that your sins may be blotted out.')}
+   ${S('2 Corinthians 7:10','Godly sorrow produces repentance leading to salvation, not to be regretted.')}
+   <p class="lbody"><strong>Your assignments:</strong> name three to five things you both agreed on
+   that you did not do. And husbands — ask your wife where your phone should go the moment you
+   walk in the door.</p>
+   <p class="pray" style="margin-top:12px">“Lord, help me to die to myself,<br>that our home may live.”</p>` }
+]},
+
+comm: { tag:'Teaching · Communication', cards:[
+ { h:'Communication —<br><em>the ingredient</em>',
+   body:`<p class="lbody">Communication is not a third factor. It came <strong>later</strong>, and it
+   serves the first two. It is the <strong>instrument God gave a couple for discovering</strong>
+   what is right before Him, and what is best for their home.</p>
+   <div style="margin:14px 0">
+     <span class="pill">Is it right before God?</span>
+     <span class="pill">Is it best for our home?</span>
+   </div>
+   <p class="lbody">You cannot answer either question alone. Both were written to be answered
+   <strong>together</strong> — and talking is how that is done.</p>
+   ${S('Proverbs 24:3–4','Through wisdom a house is built, and by understanding it is established; by knowledge the rooms are filled with all precious and pleasant riches.')}` },
+
+ { h:'Excellent communication<br>brings a <em>healthy home</em>',
+   body:`<p class="lbody">Note the word carefully — not a <em>quiet</em> home.
+   <strong>A healthy one.</strong> Many silent houses are not healthy at all; they have simply
+   stopped searching for the answers together.</p>
+   ${S('Amos 3:3','Can two walk together, unless they are agreed?')}
+   <p class="lbody">When communication fails, a couple loses the only tool they had for finding
+   God's will and their home's good. So they fall back on the two questions that ruin marriages:
+   <em>whose opinion wins</em>, and <em>who is louder</em>.</p>` },
+
+ { h:'What makes communication<br><em>difficult or impossible</em>',
+   body:`<p class="lbody">The seminar named these walls. Every one of them blocks the search.
+   Read them slowly — one or two will be yours.</p>
+   <div style="margin:12px 0">
+     <span class="pill">Pride</span><span class="pill">Unforgiveness</span>
+     <span class="pill">Fear of being misunderstood</span><span class="pill">Inability to listen</span>
+     <span class="pill">Refusal to change</span><span class="pill">Lack of feedback</span>
+     <span class="pill">Abuse of authority</span><span class="pill">Lack of repentance</span>
+     <span class="pill">A strong will</span><span class="pill">Speaking a lot</span>
+     <span class="pill">Phone distractions</span><span class="pill">Listening to answer</span>
+     <span class="pill">Interrupting</span><span class="pill">Deciding before the conversation</span>
+     <span class="pill">Forgetting past conversations</span><span class="pill">Cultural background</span>
+     <span class="pill">Too much rebuke</span><span class="pill">Silent treatment</span>
+     <span class="pill">Poor time management</span>
+   </div>` },
+
+ { h:'What Scripture says<br>about <em>the tongue and the ear</em>',
+   body:`${S('James 1:19','Let every man be swift to hear, slow to speak, slow to wrath.')}
+   ${S('Proverbs 18:13','He who answers a matter before he hears it, it is folly and shame to him.')}
+   ${S('Proverbs 15:1','A soft answer turns away wrath, but a harsh word stirs up anger.')}
+   <p class="lbody">Notice the order in James: <strong>hear first</strong>. You cannot discover what
+   is best for your home while you are still talking.</p>` },
+
+ { h:'So what pulls<br>these walls <em>down</em>?',
+   body:`<p class="lbody">You could work on each barrier one at a time for the rest of your life.
+   Or you could deal with what they all grow from.</p>
+   <p class="lbody">Pride. A strong will. Refusal to change. The need to have the last word.
+   The silent treatment. Look closely and it is <strong>one root</strong> wearing many faces.</p>
+   <p class="pray" style="margin-top:14px">There are two great solutions,<br>and we will come to them shortly.</p>
+   <p class="lbody" style="text-align:center;opacity:.85">First — the questions.</p>` }
+]}};
+
+
+
+/* ═══════════ ROUNDS & QUESTIONS ═══════════ */
+const ROUNDS = [
+  { id:'change', icon:'🔑', name:'The Two Factors',
+    desc:'Is it right before God? Is it best for our home? Every decision passes through these two.', lesson:'two' },
+  { id:'seek', icon:'🙏', name:'Applying the Two Factors',
+    desc:'The bottle. What a couple does when both factors have been asked and heaven stays quiet.' },
+  { id:'barriers', icon:'🧱', name:'Communication — and What Blocks It',
+    desc:'The instrument God gave couples for finding the answers, and the walls that break it.', lesson:'comm' },
+  { id:'solutions', icon:'✝️', name:'Dying to Self &amp; Patience',
+    desc:'The two great solutions. One is the decision; the other is that decision held over time.', lesson:'die' },
+  { id:'word', icon:'📖', name:'The Word on Marriage',
+    desc:'What Scripture itself says about the tongue, the ear, and the household.' }
+];
+
+const Q=(round,question,options,answer,ref,teach)=>({round,question,options,answer,ref,teach});
+const QUESTIONS=[
+Q('change','The two factors for a successful marriage are best described as…',['Two questions every decision must pass','Two rules to obey','Two personality types','Two prayers to repeat'],0,'Romans 12:2','They are not rules. They are questions — and a couple who learns to ask them settles disagreements that would otherwise last for years.'),
+Q('change','The FIRST factor asks:',['Is it right before God?','Is it easy for me?','Is it what my parents did?','Is it what most couples do?'],0,'Romans 12:2','Before you ask whether you like it or whether it is convenient, ask whether your actions and decisions are right before God.'),
+Q('change','The SECOND factor asks:',['Is it best for our home?','Is it best for me?','Is it best for you?','Is it best for our reputation?'],0,'Psalm 127:1','Not best for me. Not best for you. Best for the household you are building together.'),
+Q('change','Which pair of questions starts almost every marital fight?',['"Is it best for me?" and "Is it best for you?"','"Is it right before God?" and "Is it best for our home?"','"What did we agree?" and "When?"','"What does Scripture say?" and "What do we feel?"'],0,'1 Corinthians 10:24','As long as it is my opinion against your opinion, somebody must lose. That is the wrong frame entirely.'),
+Q('change','Asking "what is best for our home" changes a disagreement how?',['You both end up on the same side of the table','It makes the argument longer','It lets the stronger person decide','It postpones the decision'],0,'Amos 3:3','You stop looking at each other and start looking at the problem together. Winning an argument against your spouse is still a loss for your home.'),
+Q('change','A decision suits both husband and wife perfectly, but it is not right before God. What now?',['It must be rejected — factor one is not optional','Proceed, since both agree','Ask a friend to decide','Delay it a year'],0,'Colossians 3:17','Agreement between two people does not overrule the first question. Whatever you do in word or deed, do it in the name of the Lord.'),
+Q('change','A decision is clearly right before God, but you personally dislike it. What now?',['Do it — your preference is not the measure','Refuse until you feel better about it','Negotiate a compromise','Let your spouse do it alone'],0,'Romans 12:2','The factors are measures, not suggestions. They outrank how you feel about the outcome.'),
+Q('change','Because these two factors are the measure, what must a husband or wife be willing to do?',['Change — even a long-held opinion','Defend their view firmly','Wait for the other to change','Keep the peace by staying silent'],0,'Philippians 2:3','If an opinion is not right before God, or not best for the home, it must go — even if it is yours, and even if you have held it twenty years.'),
+Q('change','Why can you not answer "is it best for our home?" by yourself?',['The question has the word "our" in it','It is too difficult','It requires a pastor','It takes too long'],0,'Proverbs 15:22','This is exactly why we must not take decisions alone that affect the home. The question is plural by design.'),
+Q('change','Psalm 127:1 warns that unless the LORD builds the house…',['They labour in vain who build it','It will be small','The children will suffer','It will not be beautiful'],0,'Psalm 127:1','Effort without God at the centre exhausts a family. That is factor one applied to bricks.'),
+Q('change','Two people pray about the same matter and come away with different impressions. This shows…',['The factors are simple to state but hard to answer alone','That one of them is unspiritual','That prayer does not work','That the matter is unimportant'],0,'James 1:5','This is precisely the difficulty God provided an instrument for.'),
+Q('change','What did God give couples as the instrument for finding the answers to both factors?',['Communication','Authority','Tradition','Silence'],0,'Proverbs 24:3','Communication is not a third factor. It came later, and it serves the first two — it is how a couple discovers what is right before God and best for their home.'),
+
+Q('seek','You and your spouse disagree about where the bottle belongs. What is the first move?',['Apply factor one — ask what is right before God','Put it where you prefer','Let the loudest voice win','Buy two bottles'],0,'James 1:5','Before it is a domestic argument it is a chance to ask the first question. Most couples skip it and go straight to war.'),
+Q('seek','You have asked what is right before God and no clear answer comes. What now?',['Move to factor two — what is best for our home','Assume you were right all along','Wait indefinitely and do nothing','Declare it a spiritual attack'],0,'Philippians 2:3','God\'s silence on a small matter is not absence of guidance. It hands the decision to the second factor — and on a bottle, what is best for the home is usually what is convenient for your spouse.'),
+Q('seek','Why does the seminar use a bottle rather than a serious issue?',['Small things reveal how a couple handles all things','Because bottles are cheap','To avoid real conflict','Because it is only a joke'],0,'Luke 16:10','How you apply the two factors to a bottle is how you will apply them to a mortgage. Only the stakes change.'),
+Q('seek','Which statement about God\'s will in the bottle question is true?',['There is a right place, and it is worth seeking','God has no opinion about homes','Whoever prays longer is right','It cannot be known, so it does not matter'],0,'Proverbs 3:6','The premise is that God does care about your household — even its small arrangements.'),
+Q('seek','A husband hears nothing in prayer, then insists God told him he was right. What went wrong?',['He used God\'s name to end a conversation','He prayed too briefly','He should have fasted','He asked the wrong question'],0,'Exodus 20:7','Claiming divine backing for a personal preference is the fastest way to make a spouse stop talking.'),
+Q('seek','What does deferring to your spouse\'s convenience actually cost you?',['Your preference, not your dignity','Your headship','Your convictions','Your spiritual authority'],0,'1 Corinthians 10:24','Let no one seek his own, but each one the other\'s well-being. You lose a preference and keep a marriage.'),
+Q('seek','The prayer request the seminar gives after the bottle exercise is:',['"Oh Lord, bless us with the ability to communicate"','"Lord, make my spouse agree with me"','"Lord, give us a bigger house"','"Lord, settle every argument quickly"'],0,'Psalm 141:3','Notice the pronoun. Not "fix them" — bless *us*.'),
+Q('seek','Excellent communication in a home produces what?',['A healthy home','A quiet home','A wealthy home','A famous home'],0,'Proverbs 24:3','Not silence. Health. A silent house has usually just stopped searching for the answers together.'),
+
+Q('barriers','Which of these is named as a barrier to communication in marriage?',['Pride','Punctuality','Generosity','Curiosity'],0,'Proverbs 13:10','Pride goes first because it disguises itself as principle. It is the barrier that argues it is not one.'),
+Q('barriers','A wife will not discuss last year\'s wound. What barrier is at work?',['Unforgiveness','Poor memory','Lack of time','Cultural background'],0,'Ephesians 4:32','Unforgiveness does not stop the conversation. It makes every conversation secretly about something else.'),
+Q('barriers','"If I say it, he will take it the wrong way." Which barrier is this?',['Fear of being misunderstood','Pride','Silent treatment','Abuse of authority'],0,'1 John 4:18','Fear of being misunderstood quietly deletes half of everything a spouse meant to say.'),
+Q('barriers','A husband hears his wife out, then repeats his point unchanged. His barrier is:',['Listening to answer rather than to understand','Poor hearing','Distraction','Time management'],0,'James 1:19','He was not listening. He was waiting — and using the time to reload.'),
+Q('barriers','Which barrier does the phone most directly create?',['Distraction','Pride','Unforgiveness','Cultural difference'],0,'Ecclesiastes 3:1','A screen in the hand tells your spouse exactly where they rank without a word being spoken.'),
+Q('barriers','Cutting your spouse off mid-sentence communicates what?',['That your thought matters more than theirs','That you are engaged','That you are efficient','That you agree'],0,'Proverbs 18:13','Interruption is an answer before a question — and it always says the same thing.'),
+Q('barriers','A husband says nothing for three days after an argument. This is:',['The silent treatment','Wise restraint','Biblical meekness','Healthy space'],0,'Ephesians 4:26','Silence used as punishment is not peace. It is conflict with the volume turned off.'),
+Q('barriers','The seminar names a different kind of silence. Which?',['Silence to avoid escalation','Silence to win','Silence to punish','Silence to seem wise'],0,'Proverbs 17:14','The same closed mouth can be cowardice or wisdom. The difference is what you intend to do next.'),
+Q('barriers','Constant correction of a spouse is listed as:',['Too much rebuke','Loving accountability','Spiritual covering','Necessary discipline'],0,'Colossians 3:21','A spouse corrected constantly stops bringing you anything worth correcting.'),
+Q('barriers','A wife shares a concern and receives no response at all. The barrier is:',['Lack of feedback','Pride','Distraction','Fear'],0,'Proverbs 15:23','No answer is an answer. It says what you carried in was not worth carrying back out.'),
+Q('barriers','"That is not how it is done in my family." What barrier surfaces here?',['Cultural background','Unforgiveness','Strong will','Poor listening'],0,'Genesis 2:24','Two homes are being merged, not one home joined. Neither upbringing gets to be the default.'),
+Q('barriers','A husband uses his position to close down discussion. This is:',['Abuse of authority','Godly headship','Decisive leadership','Spiritual maturity'],0,'1 Peter 5:3','Authority used to end a conversation is authority spent, not exercised.'),
+Q('barriers','Which barrier concerns admitting fault?',['Lack of repentance','Fear','Distraction','Strong will'],0,'1 John 1:9','A marriage survives almost any wound. What it struggles to survive is a spouse who cannot say "I was wrong."'),
+Q('barriers','A wife recalls an agreement; her husband has entirely forgotten it. The barrier is:',['Forgetting previous conversations','Unforgiveness','Cultural background','Silent treatment'],0,'Deuteronomy 4:9','What you forget, your spouse remembers — and what they remember is that it did not matter enough to you.'),
+Q('barriers','Talking a great deal is a barrier because…',['Speaking a lot leaves no room to be answered','Words are sinful','Quiet people are holier','It wastes time'],0,'Proverbs 10:19','A monologue and a conversation look similar from the inside. Only one has two people in it.'),
+Q('barriers','Which barrier comes from failing to separate church work, employment, and home?',['Poor time management','Pride','Unforgiveness','Fear'],0,'1 Timothy 3:5','A man praised everywhere and absent at home has not succeeded. He has relocated his failure.'),
+
+Q('solutions','The seminar\'s core solution to poor communication is:',['Dying to self','Speaking louder','Winning the argument','Waiting it out'],0,'Galatians 2:20','Nearly every barrier dies the moment self does. One cure for twenty-four diseases.'),
+Q('solutions','"Weakness is not an entitlement" means:',['Your flaw does not excuse the harm it causes','Weak people should be silent','Only the strong may speak','Weakness is sin'],0,'2 Corinthians 12:9','"That is just how I am" is a description, not a defence — and your spouse still lives with the consequences.'),
+Q('solutions','The first assignment given is to identify:',['Three to five things you both agreed on and you did not do','Your spouse\'s five worst habits','Five verses to memorise','Five goals for next year'],0,'Matthew 5:37','Notice who the assignment examines. Not them. You.'),
+Q('solutions','The second assignment asks a husband to:',['Ask his wife where to put his phone when he comes home','Buy his wife a gift','Pray longer each morning','Plan a holiday'],0,'Ephesians 5:21','A small, specific, humbling act. It costs nothing and changes the temperature of an entire evening.'),
+Q('solutions','After identifying broken agreements, the seminar says to:',['Repent and make real efforts to change','Explain why you could not keep them','List your spouse\'s failures too','Move on quietly'],0,'Acts 3:19','Repentance without effort is regret. Effort without repentance is performance. We are asked for both.'),
+Q('solutions','Why does asking where the phone should go work so well?',['It hands your spouse authority over something you actually value','It is an easy rule to obey','It proves you are humble','It stops all arguments'],0,'Philippians 2:3','The exercise only means something because the phone means something. That is the design.'),
+Q('solutions','What is the difference between apologising and repenting?',['Repentance changes the behaviour','Repentance uses better words','Repentance takes longer','There is no difference'],0,'2 Corinthians 7:10','A spouse can tell the difference within a week, and no amount of eloquence closes the gap.'),
+Q('solutions','Alongside dying to self, what is the second great solution to poor communication?',['Patience','Persuasion','Persistence in arguing','Politeness'],0,'1 Corinthians 13:4','Dying to self is the decision. Patience is that same decision held over time — yielding again in November when nothing has changed yet.'),
+Q('solutions','1 Corinthians 13:4 begins its description of love with which quality?',['Love suffers long','Love is exciting','Love is fair','Love is honest'],0,'1 Corinthians 13:4','Notice what Scripture puts first. Not passion, not romance — suffering long.'),
+Q('solutions','Proverbs 14:29 says the one who is slow to wrath has great…',['Understanding','Wealth','Strength','Silence'],0,'Proverbs 14:29','Slow to speak is not weakness. Scripture calls it great understanding, and calls the opposite folly.'),
+Q('solutions','Where is most damage in a marriage actually done?',['In the seconds between hearing something and answering it','During long arguments','In front of the children','Over money'],0,'James 1:19','Patience is what you put into that gap. Almost nothing said in those four seconds is worth what it costs.'),
+Q('solutions','Ephesians 4:2 tells us to bear with one another in love, with all lowliness, gentleness and…',['Longsuffering','Boldness','Discipline','Zeal'],0,'Ephesians 4:2','You are asking God for time to grow. Give your spouse the same time you are asking for yourself.'),
+Q('solutions','Patience is listed in Galatians 5:22 as…',['Fruit of the Spirit','A spiritual gift','A personality type','A cultural value'],0,'Galatians 5:22–23','It is not a temperament some people are born with. It is fruit — grown by the Spirit in people who ask for it.'),
+Q('solutions','What should a couple pray for, according to the seminar?',['Wisdom and exceptional ability to communicate','Bigger income','Quieter children','Fewer disagreements'],0,'James 1:5','Not the removal of conflict — the instrument for answering the two questions well.'),
+
+Q('word','"A soft answer turns away…"',['Wrath','Doubt','Sorrow','Shame'],0,'Proverbs 15:1','The tone of your reply usually decides the shape of the next hour.'),
+Q('word','James 1:19 tells us to be swift to…',['Hear','Speak','Answer','Judge'],0,'James 1:19','Swift to hear, slow to speak, slow to wrath — in that order, and the order is the instruction.'),
+Q('word','Ephesians 4:26 warns not to let the sun go down on your…',['Wrath','Work','Worry','Prayers'],0,'Ephesians 4:26','A same-day repair keeps a wound from becoming a scar, and a scar from becoming a wall.'),
+Q('word','1 Peter 3:7 warns that mistreating a wife will hinder a husband\'s…',['Prayers','Work','Health','Finances'],0,'1 Peter 3:7','What happens in the kitchen reaches the throne room. Scripture makes the connection directly.'),
+Q('word','Ephesians 5:21 instructs couples to submit to one another out of…',['Reverence for Christ','Fear of shame','Duty to family','Respect for elders'],0,'Ephesians 5:21','Mutual submission is the frame the whole passage sits inside. Every verse after is read through this one.'),
+Q('word','"He who answers a matter before he hears it, it is…"',['Folly and shame to him','Wisdom in season','A sign of leadership','Acceptable if urgent'],0,'Proverbs 18:13','Scripture is blunt about interruption. It calls it folly, then adds shame.'),
+Q('word','Proverbs 24:3 says a house is built by wisdom and established by…',['Understanding','Wealth','Labour','Tradition'],0,'Proverbs 24:3','Wisdom raises the walls. Understanding keeps them standing.'),
+Q('word','Colossians 3:19 tells husbands to love their wives and not be…',['Bitter against them','Absent from them','Poor for them','Silent with them'],0,'Colossians 3:19','Bitterness is the quiet killer. It rarely shouts; it just slowly stops speaking warmly.')
+];
+
+const BOTTLE_AT=18;
+
+/* Badges unlock mid-game with a toast — the main reason people replay. */
+const BADGES=[
+ {id:'first',  i:'🌟', n:'First Light',    d:'Your first correct answer',      test:s=>s.correct>=1},
+ {id:'trio',   i:'🔥', n:'On Fire',        d:'Three in a row',                 test:s=>s.streak>=3},
+ {id:'five',   i:'💫', n:'Sweet Five',     d:'Five in a row',                  test:s=>s.streak>=5},
+ {id:'eight',  i:'👑', n:'Unshakeable',    d:'Eight in a row',                 test:s=>s.streak>=8},
+ {id:'twelve', i:'⚡', n:'Twelve Strong',  d:'Twelve in a row',                test:s=>s.streak>=12},
+ {id:'quick',  i:'⏱️', n:'Quick Spirit',   d:'Answered in under 4 seconds',    test:s=>s.fast>=1},
+ {id:'quick5', i:'🏹', n:'Swift to Hear',  d:'Five lightning answers',         test:s=>s.fast>=5},
+ {id:'bottle', i:'🍾', n:'The Bottle',     d:'Solved the bottle God\'s way',   test:s=>s.bottleWon},
+ {id:'half',   i:'📖', n:'Halfway Home',   d:'Reached the halfway mark',       test:s=>s.answered>=28},
+ {id:'clean',  i:'🕊️', n:'No Help Needed', d:'Finished without a lifeline',    test:s=>s.done&&s.llUsed===0},
+ {id:'k2',     i:'💛', n:'Two Thousand',   d:'Passed 2,000 points',            test:s=>s.pts>=2000},
+ {id:'k4',     i:'🏆', n:'Four Thousand',  d:'Passed 4,000 points',            test:s=>s.pts>=4000},
+ {id:'finish', i:'✝️', n:'Faithful End',   d:'Completed every question',       test:s=>s.done},
+ {id:'ace',    i:'💎', n:'Flawless',       d:'Missed nothing at all',          test:s=>s.done&&s.correct===QUESTIONS.length}
+];
+const QTIME=20;
+const RANKS=[
+ [3600,'🏆','Master Builder','You answered like someone already doing this work at home. Now take one assignment from tonight and actually do it this week.'],
+ [2800,'👑','Peacemaker','Strong, steady, honest. The barriers you missed are worth reading again — they are usually the ones we cannot see in ourselves.'],
+ [2000,'🕊️','Faithful Listener','Good work. Listening is a skill, not a personality — and skills improve with practice. Pick one barrier and watch for it this week.'],
+ [1200,'🌱','Growing Together','You are on the road. The verses below are the real prize; the score was only the excuse to read them.'],
+ [0,'💛','Willing Heart','Every strong marriage started here — two people willing to learn. Read the answers together and choose one thing to change.']
+];
+
+/* ═══════════ STATE ═══════════ */
+const $=s=>document.querySelector(s);
+const shuffle=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
+let player='',spouse='',order=[],idx=0,pts=0,streak=0,bestStreak=0,correct=0,log=[],
+    locked=false,curRound=null,bottleDone=false,tStart=0,lKey=null,lIdx=0;
+let earned=new Set(),fast=0,llUsed=0,ll5050=true,llSkip=true,bottleWon=false,
+    timeLeft=QTIME,timerId=null,lastRank=-1,personalBest=0,newRecord=false;
+
+const stateSnap=(done=false)=>({correct,streak,fast,bottleWon,answered:idx,pts,
+  llUsed,done,});
+
+function checkBadges(done=false){
+  const s=stateSnap(done);
+  BADGES.forEach(b=>{
+    if(!earned.has(b.id)&&b.test(s)){ earned.add(b.id); toast(b.i,b.n,b.d); }
+  });
+}
+let toastQ=[],toastBusy=false;
+function toast(icon,title,sub){
+  toastQ.push([icon,title,sub]);
+  if(!toastBusy) drainToast();
+}
+function drainToast(){
+  if(!toastQ.length){toastBusy=false;return}
+  toastBusy=true;
+  const [i,ti,ts]=toastQ.shift();
+  const d=document.createElement('div');
+  d.className='toast';
+  d.innerHTML=`<div class="ti">${i}</div><div class="tt">${ti}</div><div class="ts">${ts}</div>`;
+  document.body.appendChild(d);
+  play.badge();
+  setTimeout(()=>{d.remove();drainToast()},3400);
+}
+
+function stopTimer(){ if(timerId){clearInterval(timerId);timerId=null} }
+function startTimer(){
+  stopTimer(); timeLeft=QTIME;
+  const arc=$('#tArc'), ring=$('#tRing');
+  const paint=()=>{
+    $('#tNum').textContent=Math.max(0,Math.ceil(timeLeft));
+    arc.style.strokeDashoffset=(157*(1-timeLeft/QTIME)).toFixed(1);
+    arc.style.stroke = timeLeft<=5 ? '#D96A8B' : timeLeft<=10 ? '#E8A05E' : '#E8C15E';
+    ring.classList.toggle('low',timeLeft<=5);
+  };
+  paint();
+  timerId=setInterval(()=>{
+    timeLeft-=0.1;
+    if(timeLeft<=5.05&&timeLeft>4.95) play.urgent();
+    if(timeLeft<=0){ stopTimer(); timeLeft=0; paint(); return; }
+    paint();
+  },100);
+}
+
+
+/* ═══════════ EFFECTS ═══════════ */
+function burst(chars,n){
+  const box=$('#fx');
+  for(let i=0;i<n;i++){
+    const d=document.createElement('div'); d.className='bit';
+    d.textContent=chars[i%chars.length];
+    d.style.left=Math.random()*100+'vw'; d.style.top='-30px';
+    d.style.animationDuration=(2.2+Math.random()*1.9)+'s';
+    d.style.animationDelay=(Math.random()*.7)+'s';
+    box.appendChild(d); setTimeout(()=>d.remove(),5200);
+  }
+}
+function floatPts(t){const d=document.createElement('div');d.className='float';d.textContent=t;
+  document.body.appendChild(d);setTimeout(()=>d.remove(),1200)}
+function stamp(ch){const d=document.createElement('div');d.className='stamp';d.textContent=ch;
+  document.body.appendChild(d);setTimeout(()=>d.remove(),900)}
+function ripple(){const d=document.createElement('div');d.className='ring';
+  document.body.appendChild(d);setTimeout(()=>d.remove(),850)}
+function bump(el){el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')}
+
+/* ═══════════ FLOW ═══════════ */
+function scrollTop(){ try{ window.scrollTo(0,0); }catch(e){} }
+function show(id){
+  try{ if(id!=='quiz') stopTimer(); }catch(e){}
+  var list=document.querySelectorAll('.screen');
+  for(var i=0;i<list.length;i++) list[i].classList.remove('on');
+  var el=document.getElementById(id);
+  if(el) el.classList.add('on');
+  scrollTop();
+}
+
+function beginGame(){
+  try{
+  ac(); play.open();
+  player=($('#n1').value||'').trim()||'Friend';
+  spouse=($('#n2').value||'').trim();
+  order=[]; ROUNDS.forEach(r=>order.push(...shuffle(QUESTIONS.filter(q=>q.round===r.id))));
+  idx=0;pts=0;streak=0;bestStreak=0;correct=0;log=[];bottleDone=false;curRound=null;
+  earned=new Set();fast=0;llUsed=0;ll5050=true;llSkip=true;bottleWon=false;
+  lastRank=-1;newRecord=false;
+  $('#hTot').textContent = order.length;
+  loadBest();
+  paintSfx(); nextStep();
+  }catch(err){ console.error(err); try{ show('quiz'); }catch(e){} }
+}
+
+function nextStep(){
+  if(idx>=order.length) return finish();
+  if(idx===BOTTLE_AT&&!bottleDone) return bottleScene();
+  const q=order[idx];
+  if(q.round!==curRound){
+    curRound=q.round;
+    const r=ROUNDS.find(x=>x.id===curRound);
+    if(r.lesson) return openLesson(r.lesson);
+    return roundCard(r);
+  }
+  renderQ();
+}
+function roundCard(r){
+  const n=ROUNDS.indexOf(r)+1;
+  $('#iIcon').textContent=r.icon;
+  $('#iNum').textContent=`Round ${n} of ${ROUNDS.length}`;
+  $('#iName').textContent=r.name;
+  $('#iDesc').textContent=r.desc;
+  play.page(); show('intro');
+}
+$('#iGo').onclick=()=>{play.tap();renderQ()};
+
+/* ── teaching ── */
+function openLesson(key){ lKey=key; lIdx=0; paintLesson(); show('lesson'); }
+function paintLesson(){
+  const L=LESSONS[lKey], c=L.cards[lIdx];
+  $('#lTag').textContent=L.tag;
+  $('#lCard').innerHTML=`<div class="lesson"><div class="lnum">${lIdx+1} of ${L.cards.length}</div>
+    <h2 class="lh">${c.h}</h2>${c.body}</div>`;
+  $('#lDots').innerHTML=L.cards.map((_,i)=>`<i class="${i===lIdx?'on':''}"></i>`).join('');
+  $('#lBack').style.visibility=lIdx===0?'hidden':'visible';
+  $('#lNext').textContent=lIdx===L.cards.length-1?'Start the round':'Continue';
+  scrollTop();
+}
+$('#lNext').onclick=()=>{
+  const L=LESSONS[lKey];
+  if(lIdx<L.cards.length-1){ lIdx++; play.page(); paintLesson(); }
+  else { play.open(); roundCard(ROUNDS.find(r=>r.id===curRound)); }
+};
+$('#lBack').onclick=()=>{ if(lIdx>0){lIdx--;play.page();paintLesson();} };
+$('#lSfx').onclick=()=>{toggleSfx()}; $('#qSfx').onclick=()=>{toggleSfx()};
+
+/* ── questions ── */
+const multFor=s=>s>=12?4:s>=8?3:s>=5?2:s>=3?1.5:1;
+
+function paintCombo(){
+  const m=multFor(streak);
+  const tier=streak>=8?3:streak>=5?2:streak>=3?1:0;
+  const nextAt=streak>=12?12:streak>=8?12:streak>=5?8:streak>=3?5:3;
+  const pct=Math.min(100,(streak/nextAt)*100);
+  const bar=$('#cBar');
+  bar.className='cbar'+(tier?' t'+tier:'');
+  bar.querySelector('i').style.width=pct+'%';
+  $('#cMult').textContent='×'+m;
+  $('#cLab').textContent = streak===0 ? 'Build a streak for bigger points'
+    : streak>=12 ? 'Maximum multiplier — hold it!'
+    : `${nextAt-streak} more for ×${multFor(nextAt)}`;
+}
+function paintRank(){
+  const asc=[...RANKS].reverse();
+  let i=0; for(let k=0;k<asc.length;k++) if(pts>=asc[k][0]) i=k;
+  const cur=asc[i], nxt=asc[i+1];
+  $('#rkNow').textContent=cur[2];
+  if(nxt){
+    $('#rkNext').textContent=nxt[2];
+    const span=nxt[0]-cur[0];
+    $('#rkBar').style.width=Math.min(100,((pts-cur[0])/span)*100)+'%';
+  } else { $('#rkNext').textContent='Highest'; $('#rkBar').style.width='100%'; }
+  if(lastRank>=0 && i>lastRank){ play.rankup(); toast(cur[1],'Rank up!',`You are now ${cur[2]}`); }
+  lastRank=i;
+}
+function renderQ(){
+  locked=false;tStart=Date.now();
+  const q=order[idx], r=ROUNDS.find(x=>x.id===q.round);
+  const opts=shuffle(q.options.map((t,i)=>({t,ok:i===q.answer})));
+  $('#qRound').textContent=r.name;
+  $('#qText').textContent=q.question;
+  $('#hQ').textContent=idx+1;
+  $('#hPts').textContent=pts.toLocaleString();
+  $('#hBar').style.width=(idx/order.length*100)+'%';
+  const sc=$('#hStreak'); sc.innerHTML='Streak <b>'+streak+'</b>';
+  sc.classList.toggle('hot',streak>=3);
+  $('#qOpts').innerHTML=opts.map((o,i)=>
+    `<button class="opt" style="animation-delay:${i*.06}s" data-ok="${o.ok}">
+      <span class="ltr">${'ABCD'[i]}</span><span>${o.t}</span></button>`).join('');
+  document.querySelectorAll('#qOpts .opt').forEach(b=>b.onclick=()=>answer(b,q));
+  $('#fb').classList.remove('on');
+  $('#lls').style.display='flex';
+  $('#ll5050').disabled=!ll5050; $('#llSkip').disabled=!llSkip;
+  paintCombo(); paintRank(); startTimer();
+  show('quiz');
+}
+function answer(btn,q){
+  if(locked)return; locked=true; stopTimer();
+  $('#lls').style.display='none';
+  const ok=btn.dataset.ok==='true', secs=(Date.now()-tStart)/1000;
+  document.querySelectorAll('#qOpts .opt').forEach(b=>{
+    b.disabled=true;
+    if(b.dataset.ok==='true')b.classList.add('right');
+    else if(b===btn)b.classList.add('wrong');
+    else b.classList.add('fade');
+  });
+  let gain=0;
+  if(ok){
+    correct++;streak++;bestStreak=Math.max(bestStreak,streak);
+    if(secs<4) fast++;
+    /* Speed bonus scales smoothly with the ring — watching it drain is the hook. */
+    const speed=Math.round(Math.max(0,timeLeft/QTIME)*80);
+    const mult=multFor(streak);
+    gain=Math.round((100+speed)*mult); pts+=gain;
+    ripple(); stamp('✓'); floatPts('+'+gain); bump($('#hPtsChip'));
+    if(streak===3||streak===5||streak===8||streak===12){ play.streak(); burst(['💛','✨','♥','🎉'],28); }
+    else { play.right(); burst(['💗','✨'],9); }
+  } else { streak=0; play.wrong(); }
+  log.push({ok,q:q.question,a:q.options[q.answer],ref:q.ref,teach:q.teach});
+  $('#fbV').textContent=ok?(streak>=3?`${streak} in a row!`:'Correct'):'Not quite';
+  $('#fbV').className='verdict '+(ok?'y':'n');
+  $('#fbRef').innerHTML=q.ref+(gain?`<span class="pts">+${gain}</span>`:'');
+  $('#fbT').textContent=q.teach;
+  $('#fb').classList.add('on');
+  $('#hPts').textContent=pts.toLocaleString();
+  paintCombo(); paintRank();
+  checkBadges();
+  $('#qNext').textContent=(idx===order.length-1)?'See your result':'Next';
+}
+
+/* ── lifelines ── */
+$('#ll5050').onclick=function(){
+  if(locked||!ll5050)return;
+  ll5050=false; llUsed++; this.disabled=true; play.lifeline();
+  const wrong=[...document.querySelectorAll('#qOpts .opt')].filter(b=>b.dataset.ok!=='true');
+  shuffle(wrong).slice(0,Math.max(0,wrong.length-1)).forEach(b=>{
+    b.classList.add('fade'); b.disabled=true;
+  });
+  toast('🤝','Counsel taken','Two options remain — choose together');
+};
+$('#llSkip').onclick=function(){
+  if(locked||!llSkip)return;
+  llSkip=false; llUsed++; this.disabled=true; play.lifeline(); stopTimer();
+  const q=order[idx];
+  log.push({ok:false,q:q.question,a:q.options[q.answer],ref:q.ref,teach:q.teach});
+  streak=0;
+  toast('🕊️','Grace given','No points, no penalty. Read the answer below.');
+  locked=true; $('#lls').style.display='none';
+  document.querySelectorAll('#qOpts .opt').forEach(b=>{
+    b.disabled=true;
+    if(b.dataset.ok==='true')b.classList.add('right'); else b.classList.add('fade');
+  });
+  $('#fbV').textContent='Passed'; $('#fbV').className='verdict n';
+  $('#fbRef').textContent=q.ref; $('#fbT').textContent=q.teach;
+  $('#fb').classList.add('on');
+  paintCombo();
+  $('#qNext').textContent=(idx===order.length-1)?'See your result':'Next';
+};
+
+/* ── chapter checkpoints ── */
+const CHAPTERS=[
+ {at:14, i:'🔑', h:'Chapter One complete', s:'You have the two factors. Now the harder part — the walls.', bonus:200},
+ {at:28, i:'🧱', h:'Halfway home', s:'Every couple recognises at least one of those barriers. Keep going.', bonus:300},
+ {at:42, i:'✝️', h:'Chapter Three complete', s:'Dying to self and patience. The two great solutions are yours.', bonus:400}
+];
+function chapterCheck(){
+  const c=CHAPTERS.find(c=>c.at===idx);
+  if(!c) return false;
+  pts+=c.bonus; play.chapter(); burst(['🎉','💛','✨','♥','🏆'],40);
+  const box=document.createElement('div');
+  box.className='chapter';
+  box.innerHTML=`<div class="cbox"><div class="ci">${c.i}</div><div class="ch">${c.h}</div>
+    <p class="cs">${c.s}</p><div class="cb">+${c.bonus}</div>
+    <button class="btn mt" id="chGo">Keep going</button></div>`;
+  document.body.appendChild(box);
+  box.querySelector('#chGo').onclick=()=>{ play.tap(); box.remove(); paintRank(); nextStep(); };
+  return true;
+}
+
+$('#qNext').onclick=()=>{play.tap();idx++;if(!chapterCheck())nextStep()};
+
+/* ── bottle ── */
+function bottleScene(){
+  bottleDone=true; play.page();
+  $('#bPts').textContent=pts.toLocaleString();
+  $('#bText').textContent=spouse
+    ?`${player}, you say the bottle belongs on the left. ${spouse} is certain it belongs on the right. Neither of you is being unreasonable. What do you do?`
+    :`You are certain the bottle belongs on the left. Your spouse is equally certain it belongs on the right. Neither of you is being unreasonable. What do you do?`;
+  $('#bBody').innerHTML=`<div class="shelf">
+    <div class="spot" data-a="force"><span class="ico">👈</span>Put it on the left.<br>I am right about this.</div>
+    <div class="spot" data-a="pray"><span class="ico">🙏</span>Stop and pray.<br>Ask God where it goes.</div></div>`;
+  bindSpots(a=>a==='pray'?bottlePray():bottleForce());
+  show('bottle');
+}
+function bindSpots(fn){document.querySelectorAll('#bBody .spot').forEach(el=>{
+  el.onclick=()=>{play.tap();el.classList.add('pick');setTimeout(()=>fn(el.dataset.a),240)}})}
+function bottleForce(){
+  play.wrong();
+  $('#bText').textContent='The bottle is on the left. You won.';
+  $('#bBody').innerHTML=`<div class="fb on" style="border-left-color:#C9524C">
+    <div class="verdict n">You skipped both factors</div><div class="verse">Proverbs 21:2</div>
+    <p class="teach">You never asked whether it was right before God, and you never asked what was
+    best for your home. You asked only what was best for <em>you</em> — and your spouse has now
+    learned that when you are certain, asking is optional. That lesson will outlast the bottle by
+    twenty years.</p></div>
+    <div class="center" style="margin-top:18px"><button class="btn sm" id="bRetry">Try that again</button></div>`;
+  $('#bRetry').onclick=bottleScene;
+}
+function bottlePray(){
+  play.page();
+  $('#bText').textContent='Factor one — you ask together what is right before God.';
+  $('#bBody').innerHTML=`<p class="pray">“Lord, this is small. But it is ours,<br>and we would rather ask You than fight.”</p>
+    <div class="dots"><i></i><i></i><i></i></div>`;
+  setTimeout(()=>{
+    $('#bText').textContent='You wait. No clear answer comes.';
+    $('#bBody').innerHTML=`<p class="sub" style="margin-bottom:6px">Heaven is quiet on the matter of
+      the bottle. Neither side is right or wrong before God. So the decision passes to
+      <strong>factor two — what is best for our home?</strong></p>
+      <div class="shelf">
+      <div class="spot" data-a="mine"><span class="ico">👈</span>God did not object.<br>So my way it is.</div>
+      <div class="spot" data-a="theirs"><span class="ico">💛</span>Where it works best<br>for our home — my spouse's side.</div></div>`;
+    bindSpots(a=>a==='theirs'?bottleWin():bottleMiss());
+  },2600);
+}
+function bottleMiss(){
+  play.wrong();
+  $('#bText').textContent='Silence is not the same as agreement.';
+  $('#bBody').innerHTML=`<div class="fb on" style="border-left-color:#C9524C">
+    <div class="verdict n">A prayer used as leverage</div><div class="verse">Philippians 2:3</div>
+    <p class="teach">Praying and then doing what you always intended is not asking factor one — it
+    is collecting a signature. When God does not object either way, you do not win by default.
+    The decision moves to factor two: <strong>what is best for our home?</strong></p></div>
+    <div class="center" style="margin-top:18px"><button class="btn sm" id="bRetry">Try that again</button></div>`;
+  $('#bRetry').onclick=bottleScene;
+}
+function bottleWin(){
+  pts+=400; bottleWon=true; checkBadges(); play.bottle(); burst(['💗','💖','✨','🌸','🕊️','💕'],36); floatPts('+400'); ripple();
+  $('#bPts').textContent=pts.toLocaleString();
+  $('#bText').textContent=spouse?`The bottle goes where ${spouse} can reach it.`
+    :'The bottle goes where your spouse can reach it.';
+  $('#bBody').innerHTML=`<div class="fb on">
+    <div class="verdict y">That is the whole lesson <span class="pts">+400</span></div>
+    <div class="verse">Romans 12:10 · Philippians 2:3</div>
+    <p class="teach">You asked factor one — is it right before God? He did not overrule either of
+    you. So you moved to factor two — <strong>what is best for our home?</strong> — and the answer
+    was not your side of the shelf.<br><br>
+    You lost a preference and kept a marriage, and you practised it on something small enough that
+    it cost you almost nothing. Note what made it possible: <strong>you talked</strong>.</p></div>
+    <p class="pray" style="font-size:21px">“Oh Lord, bless us with<br>the ability to communicate.”</p>
+    <div class="center" style="margin-top:14px"><button class="btn sm" id="bGo">Continue the challenge</button></div>`;
+  $('#bGo').onclick=nextStep;
+}
+
+/* ── result ── */
+async function finish(){
+  stopTimer();
+  $('#hBar').style.width='100%';
+  checkBadges(true);
+  const [,icon,rank,msg]=RANKS.find(r=>pts>=r[0]);
+  $('#rIcon').textContent=icon; $('#rRank').textContent=rank; $('#rMsg').textContent=msg;
+  $('#sCorrect').textContent=correct+'/'+QUESTIONS.length;
+  $('#sAcc').textContent=Math.round(correct/QUESTIONS.length*100)+'%';
+  $('#sBest').textContent=bestStreak;
+
+  newRecord = pts>personalBest;
+  $('#rRecord').style.display = newRecord ? 'block' : 'none';
+  $('#rPB').textContent = newRecord
+    ? (personalBest ? `You beat your old best of ${personalBest.toLocaleString()}.` : 'Your first run — this is the score to beat.')
+    : `Your best so far: ${personalBest.toLocaleString()}. You were ${(personalBest-pts).toLocaleString()} short.`;
+  if(newRecord){ personalBest=pts; try{ await window.storage.set('cmfi:pb',String(pts)); }catch(e){} }
+
+  $('#rBadges').innerHTML=BADGES.map(b=>
+    `<div class="bdg${earned.has(b.id)?'':' locked'}" title="${b.d}">
+       <div class="bi">${earned.has(b.id)?b.i:'🔒'}</div><div class="bn">${b.n}</div></div>`).join('');
+
+  let shown=0; const step=Math.max(1,Math.ceil(pts/45));
+  const tick=setInterval(()=>{shown=Math.min(pts,shown+step);
+    $('#rPts').textContent=shown.toLocaleString(); if(shown>=pts)clearInterval(tick)},26);
+  play.fanfare(); burst(['💗','💖','✨','🌸','🏆','🕊️','💕'],46);
+  if(newRecord) setTimeout(()=>{play.rankup();burst(['🎉','🌟','💛'],30)},900);
+
+  const missed=log.filter(l=>!l.ok), list=missed.length?missed:log.slice(0,10);
+  $('#review').innerHTML=`<div class="section-title">${missed.length?'Worth a second look':'Take these home'}</div>`+
+    list.map(l=>`<div class="rv"><p class="rq">${l.q}</p>
+      <p class="ra">${l.a} &nbsp;·&nbsp; ${l.ref}</p><p class="rt">${l.teach}</p></div>`).join('');
+  await saveScore(); show('done');
+}
+$('#showRev').onclick=function(){play.tap();
+  const r=$('#review'), open=r.style.display!=='none';
+  r.style.display=open?'none':'block';
+  this.textContent=open?'See the Answers':'Hide the Answers'};
+$('#again').onclick=()=>{play.tap();$('#review').style.display='none';
+  const missed=BADGES.filter(b=>!earned.has(b.id)).length;
+  if(missed) toast('🔒',`${missed} badge${missed>1?'s':''} still locked`,'One more round?');
+  show('reg')};
+
+async function loadBest(){
+  try{ const r=await window.storage.get('cmfi:pb'); if(r&&r.value) personalBest=+r.value||0; }catch(e){}
+}
+async function saveScore(){
+  const label=spouse?`${player} & ${spouse}`:player;
+  let list=[];
+  try{const r=await window.storage.get('cmfi:board',true); if(r&&r.value)list=JSON.parse(r.value)}catch(e){}
+  const entry={name:label,pts,when:Date.now()};
+  list.push(entry); list.sort((a,b)=>b.pts-a.pts); list=list.slice(0,20);
+  try{await window.storage.set('cmfi:board',JSON.stringify(list),true)}catch(e){}
+  $('#board').innerHTML=`<div class="section-title">Conference leaderboard</div>`+
+    list.slice(0,10).map((e,i)=>{
+      const me=e.name===label&&Math.abs(e.when-entry.when)<3000;
+      const m=['🥇','🥈','🥉'][i]||(i+1);
+      return `<div class="row${me?' me':''}"><span class="pos">${m}</span>
+        <span class="nm">${esc(e.name)}</span><span class="sc2">${e.pts.toLocaleString()}</span></div>`;
+    }).join('')+`<p class="foot" style="margin-top:10px">Scores are shared with everyone playing this game.</p>`;
+}
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+document.addEventListener('keydown',e=>{
+  if($('#lesson').classList.contains('on')){
+    if(e.key==='ArrowRight'||e.key==='Enter'){$('#lNext').click()}
+    else if(e.key==='ArrowLeft'){$('#lBack').click()} return;
+  }
+  if(!$('#quiz').classList.contains('on'))return;
+  if(!locked&&(e.key==='c'||e.key==='C')){$('#ll5050').click();return}
+  if(!locked&&(e.key==='g'||e.key==='G')){$('#llSkip').click();return}
+  if(!locked&&e.key>='1'&&e.key<='4'){const b=document.querySelectorAll('#qOpts .opt')[+e.key-1];if(b)b.click()}
+  else if(locked&&(e.key==='Enter'||e.key===' ')){e.preventDefault();$('#qNext').click()}
+});
+(function(){
+  var b=document.getElementById('start');
+  if(b){
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      if(b.dataset.started==='1') return;
+      b.dataset.started='1';
+      try{ beginGame(); }finally{
+        setTimeout(function(){b.dataset.started='0';},500);
+      }
+    });
+  }
+})();
+$('#n1').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();beginGame()}});
+$('#n2').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();beginGame()}});
+/* drifting background hearts */
+(function(){
+  const box=document.getElementById('hearts');
+  const glyphs=['♥','♡','💗','♥','❤','♡'];
+  for(let i=0;i<22;i++){
+    const s=document.createElement('span');
+    s.textContent=glyphs[i%glyphs.length];
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.fontSize=(15+Math.random()*34)+'px';
+    s.style.animationDuration=(17+Math.random()*20)+'s';
+    s.style.animationDelay=(-Math.random()*30)+'s';
+    if(i%3===0) s.style.color='#C69329';
+    box.appendChild(s);
+  }
+})();
+/* text size: normal → large → extra large */
+const SIZES=[18,21,24];
+let sizeIdx=0;
+function applySize(){
+  document.body.style.fontSize=SIZES[sizeIdx]+'px';
+  document.documentElement.style.setProperty('--scale',(SIZES[sizeIdx]/18).toFixed(3));
+  const big=sizeIdx>0;
+  const l=document.getElementById('lSize'), q=document.getElementById('qSize');
+  if(l) l.textContent = big?'A− Text':'A+ Text';
+  if(q) q.textContent = big?'A−':'A+';
+}
+function cycleSize(){ sizeIdx=(sizeIdx+1)%SIZES.length; play.tap(); applySize(); }
+document.getElementById('lSize').onclick=cycleSize;
+document.getElementById('qSize').onclick=cycleSize;
+applySize();
+
+paintSfx();
+window.addEventListener('error',function(){
+  var box=document.getElementById('compatError');
+  if(box)box.style.display='flex';
+});
+</script>
